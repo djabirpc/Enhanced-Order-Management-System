@@ -55,7 +55,7 @@ namespace Enhanced_Order_Management_System.Controllers
             }
         }
 
-        [HttpGet("{id:int}", Name = "GetVilla")]
+        [HttpGet]
         public async Task<IActionResult> GetAllOrders()
         {
 
@@ -73,7 +73,7 @@ namespace Enhanced_Order_Management_System.Controllers
 
         }
 
-        [HttpGet("{id:string}", Name = "GetVilla")]
+        [HttpGet("{id:Guid}", Name = "GetVilla")]
         public async Task<IActionResult> GetByIdOrders(Guid id)
         {
 
@@ -99,7 +99,7 @@ namespace Enhanced_Order_Management_System.Controllers
         }
 
         [Authorize]
-        [HttpPut("id:string")]
+        [HttpPut("id:Guid")]
         public async Task<IActionResult> UpdateOrderStatus(Guid id, UpdateOrderStatus order)
         {
             try
